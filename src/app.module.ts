@@ -1,8 +1,6 @@
 import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { MessageProducerService } from './message-producer-service/message-producer-service.service';
-import { MessageConsumer } from './message-producer-service/message.consumer';
 import { TasksModule } from './tasks/tasks.module';
 
 @Module({
