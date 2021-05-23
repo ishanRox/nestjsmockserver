@@ -1,5 +1,5 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { AddTaskInput } from './dto/task.dto';
+import { AddTaskInput, UpdateTaskInput } from './dto/task.dto';
 import { Task } from './models/task.model';
 import { TasksService } from './tasks.service';
 
@@ -28,12 +28,12 @@ export class TasksResolver {
         return this.taskService.addTask(input);
     }
 
-    // @Mutation(type => Task)
-    // async updateTask(
-    //     @Args('input') input: UpdateTaskInput,
-    // ) {
-    //     return this.taskService.updateTask(input);
-    // }
+    @Mutation(type => Task)
+    async updateTask(
+        @Args('input') input: UpdateTaskInput,
+    ) {
+        return this.taskService.updateTask(input);
+    }
 
     @Mutation(type => [Task])
     async deleteTask(

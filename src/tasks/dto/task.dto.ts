@@ -10,3 +10,15 @@ export class AddTaskInput {
   @Field()
   description: string;
 }
+
+
+
+@InputType()
+export class UpdateTaskInput {
+  @Field()
+  @IsNotEmpty()
+  title: string;
+
+  @Field()
+  description: string;
+}
