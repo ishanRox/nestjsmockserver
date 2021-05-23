@@ -12,12 +12,9 @@ import { TasksModule } from './tasks/tasks.module';
       port: 6379,
     },
   }),
-  BullModule.registerQueue({
-    name:'message-queue'
-  })
 ],
   controllers: [],
-  providers: [MessageProducerService,MessageConsumer],
+  providers: [],
   
 })
 export class AppModule { }
