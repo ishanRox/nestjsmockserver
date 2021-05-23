@@ -5,16 +5,11 @@ import { TASKS } from './task.mock';
 
 @Injectable()
 export class TasksService {
-
+    //like our database
     tasks = TASKS;
-
 
     getTasks() {
         return this.tasks;
-    }
-
-    getTask(id: string) {
-        return this.tasks.find(task => task.id === id);
     }
 
     async addTask(input: AddTaskInput): Promise<Task[]> {
@@ -30,14 +25,5 @@ export class TasksService {
         return this.tasks;
     }
 
-    deleteTask(id: string): Task[] {
-        const taskIndex = this.tasks.findIndex(item => item.id === id);
-        if (taskIndex === -1) {
-            throw new HttpException('Task not found', 404);
-        }
-
-        this.tasks.splice(taskIndex, 1);
-        return this.tasks;
-    }
 
 }

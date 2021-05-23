@@ -14,12 +14,7 @@ export class TasksResolver {
         return this.taskService.getTasks();
     }
 
-    @Query(type => Task)
-    async getTask(
-        @Args('id') id: string,
-    ) {
-        return this.taskService.getTask(id);
-    }
+    
 
     @Mutation(type => [Task])
     async addTask(
@@ -28,17 +23,5 @@ export class TasksResolver {
         return this.taskService.addTask(input);
     }
 
-    // @Mutation(type => Task)
-    // async updateTask(
-    //     @Args('input') input: UpdateTaskInput,
-    // ) {
-    //     return this.taskService.updateTask(input);
-    // }
-
-    @Mutation(type => [Task])
-    async deleteTask(
-        @Args('id') id: string,
-    ) {
-        return this.taskService.deleteTask(id);
-    }
+   
 }
